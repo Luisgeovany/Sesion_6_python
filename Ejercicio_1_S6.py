@@ -1,29 +1,28 @@
-# En este ejercicio vais a crear la clase Vehículo la cual tendrá los siguientes atributos:
-# Color
-# Ruedas
-# Puertas
+# Inicializamos la clase Vehiculo
+class Vehiculo():
+    # Constructor
+    def __init__(self, color, ruedas, puertas):
+        self.color = color
+        self.ruedas = ruedas
+        self.puertas = puertas
 
-class Vehiculo:
-    color = 'Negro'
-    ruedas = 4
-    puertas = 4
+    def __str__(self):
+        return 'Color {}, {} ruedas'.format(self.color, self.ruedas, self.puertas)
 
 
-# Por otro lado crearéis la clase Coche la cual heredará de Vehículo y tendrá los siguientes atributos:
-# Velocidad
-# cilindrada
 class Coche(Vehiculo):
-    velocidad = 80
-    cilindraje = 4000
+    def __init__(self, color, ruedas, puertas, velocidad, cilindraje):
+        self.color = color
+        self.ruedas = ruedas
+        self.puertas = puertas
+        self.velocidad = velocidad
+        self.cilindraje = cilindraje
+
+    def __str__(self):
+        return 'Color {}, {} km/h, {} ruedas, {} puertas, {} cc'.format(self.color, self.velocidad, self.ruedas,
+                                                                        self.puertas, self.cilindraje)
 
 
-# Por último, tendrás que crear un objeto de la clase Coche y mostrarlo por consola.
+coche = Coche('Rojo', 4, 4, 100, 1600)
 
-coche1 = Coche()
-
-print(f'Color: {coche1.color}')
-print(f'Ruedas: {coche1.ruedas}')
-print(f'Puertas: {coche1.puertas}')
-print(f'Velocidad: {coche1.velocidad}')
-print(f'Cilindraje: {coche1.cilindraje}')
-
+print(coche)
